@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+span {
+  color: black;
+  font-size: 50px;
+  font-weight: bold;
+  text-decoration: underline white;
+}
+
+.checkbox-option {
+  width: 150px;
+  position: absolute;
+  z-index: 505;
+  bottom: 400px;
+  right: 50px;
+}
+.checkbox-option2 {
+  width: 150px;
+  position: absolute;
+  z-index: 505;
+  bottom: 440px;
+  right: 50px;
+}
+
+.checkbox-option3 {
+  width: 150px;
+  position: absolute;
+  z-index: 505;
+  bottom: 480px;
+  right: 50px;
+}
+
+.checkbox-option4 {
+  width: 150px;
+  position: absolute;
+  z-index: 505;
+  bottom: 520px;
+  right: 50px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 7vh;
+  background: rgb(73, 79, 82);
+  color: white;
+}
+
+.App {
+  text-align: center;
+}
+
+#root {
+  height: 100%;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  align-items: center;
+  list-style: none;
+}
+
+.map {
+  height: 100vh;
+}
+
+#save-btn {
+  width: 150px;
+  position: absolute;
+  z-index: 500;
+  bottom: 40px;
+  right: 50px;
+}
+
+#show-hide-btn {
+  width: 150px;
+  position: absolute;
+  z-index: 500;
+  bottom: 40px;
+  right: 250px;
+}
