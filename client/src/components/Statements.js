@@ -6,10 +6,9 @@ import { getValueFromSideBar } from '../modules/mapReducer'
 class Statements extends Component {
   handleClick = (e) => {
     this.props.getValueFromSideBar(e.target)
-  }
+  };
 
   render() {
-
     return (
       <div className="options-nav">
         <div className="row">
@@ -44,18 +43,18 @@ class Statements extends Component {
         </div>
       </div>
     );
-  }
-}
+  };
+};
 
 const mapStateToProps = state => {
   return {
     sideBarValue: state.map.sideBarValue,
     sideBarItemChecked: state.map.sideBarItemChecked,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = {
   getValueFromSideBar,
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Statements);

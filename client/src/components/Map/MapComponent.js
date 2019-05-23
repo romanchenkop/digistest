@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { userIcon, myIcon, organizationIcon } from '../../etc/consts';
-import geoJSON from '../../etc/geoJSON'
-
-
+import geoJSON from '../../etc/geoJSON';
 
 class MapComponent extends Component {
   getDistance = (origin, destination) => {
@@ -19,7 +17,7 @@ class MapComponent extends Component {
     const c = 2 * Math.asin(Math.sqrt(a));
     const EARTH_RADIUS = 6371;
     return c * EARTH_RADIUS * 1000;
-  }
+  };
 
   toRadian = (degree) => {
     return degree * Math.PI / 180;
@@ -32,7 +30,6 @@ class MapComponent extends Component {
 
   render(props) {
     const position = [this.props.location.lat, this.props.location.lng];
-
     return (
       <div className="main-page-container">
         <Map
@@ -63,8 +60,6 @@ class MapComponent extends Component {
               <Popup>{obj.type}</Popup>
             </Marker>
           ))
-
-
           }
           {this.props.markers.map((position, idx) => (
             <Marker

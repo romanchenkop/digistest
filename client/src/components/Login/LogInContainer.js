@@ -16,8 +16,8 @@ export class LogInContainer extends Component {
         />
       </div>
     );
-  }
-}
+  };
+};
 
 const mapStateToProps = (state) => {
   return {

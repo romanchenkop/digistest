@@ -3,19 +3,18 @@ import { connect } from 'react-redux';
 import { saveMarkers, showMarkers } from '../modules/mapReducer';
 import axios from 'axios'
 
-
 class ButtonComponent extends Component {
   onSaveClick = () => {
     const locationArray = {
       markers: [this.props.markers]
-    }
+    };
     axios({
       method: 'post',
       url: 'http://localhost:5000/api/location/markers-array',
       data: locationArray
-    }).then(Response => alert(`Your markers-array ID: ${Response.data._id}`).then()).catch(err => console.log(err))
+    }).then(Response => alert(`Your markers-array ID: ${Response.data._id}`).then()).catch(err => console.log(err));
     this.props.saveMarkers(locationArray);
-  }
+  };
 
   render() {
     return (
@@ -31,7 +30,6 @@ class ButtonComponent extends Component {
         >
           Save Markers
         </button>
-
         <button
           onClick={this.props.showMarkers}
           id="show-hide-btn"
@@ -45,8 +43,8 @@ class ButtonComponent extends Component {
         </button>
       </div>
     );
-  }
-}
+  };
+};
 
 const mapStateToProps = (state) => {
   return {

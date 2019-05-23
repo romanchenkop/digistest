@@ -26,7 +26,7 @@ const mapReducer = (state = defaultState, action) => {
         sideBarValue: action.payload.value,
         sideBarItemChecked: action.payload.checked,
       };
-    }
+    };
     case GET_USER_LOCATION: {
       return {
         ...state,
@@ -34,31 +34,31 @@ const mapReducer = (state = defaultState, action) => {
         allowsUserLocation: true,
         zoom: 13,
       };
-    }
+    };
     case ADD_MARKER: {
       return {
         ...state,
         markers: [...state.markers, action.payload],
         saveBtnAble: true,
       };
-    }
+    };
     case SHOW_MARKERS:
       return {
         ...state,
         markersOpacity: action.payload,
       };
-    case SAVE_MARKERS:
+    case SAVE_MARKERS: {
       return {
         ...state,
         markersOpacity: action.payload,
       };
+    };
     default:
       return state;
-  }
+  };
 };
 
 export const getValueFromSideBar = (data) => {
-  console.log(data)
   return {
     type: GET_VALUE_FROM_SIDE_BAR,
     payload: data,

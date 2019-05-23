@@ -8,7 +8,7 @@ export const organizationIcon = L.icon({
 export const userIcon = L.icon({
   iconUrl:
     'https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/66-512.png',
-  iconSize: [60, 60]
+  iconSize: [60, 60],
 });
 
 export const myIcon = L.icon({
@@ -16,5 +16,5 @@ export const myIcon = L.icon({
     'https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/67-512.png',
   iconSize: [60, 60],
   iconAnchor: [29, 50],
-  popupAnchor: [0, -41]
+  popupAnchor: [0, -41],
 });

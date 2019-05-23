@@ -5,13 +5,13 @@ class LogIn extends Component {
   onEmailChange = (event) => {
 
     this.props.setEmailText(event.target.value);
-  }
+  };
 
   handleSubmitClick = () => {
     const userData = {
       "login": this.props.email,
       "password": this.props.password,
-    }
+    };
     axios({
       method: 'post',
       url: 'http://localhost:5000/api/user/login',
@@ -19,7 +19,7 @@ class LogIn extends Component {
         'login': userData.login,
         'password': userData.password,
       }
-    }).catch(error => console.log(error))
+    }).catch(error => console.log(error));
   };
 
   onPasswordChange = (event) => {
@@ -66,7 +66,7 @@ class LogIn extends Component {
         </form>
       </div>
     );
-  }
-}
+  };
+};
 
 export default LogIn;

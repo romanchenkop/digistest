@@ -13,7 +13,7 @@ class MainPage extends Component {
         <ButtonComponent />
       </div>
     );
-  }
-}
+  };
+};
 
 export default MainPage;
