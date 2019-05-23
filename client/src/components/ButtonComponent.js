@@ -43,8 +43,8 @@ class ButtonComponent extends Component {
         </button>
       </div>
     );
-  };
-};
+  }
+}
 
 const mapStateToProps = (state) => {
   return {

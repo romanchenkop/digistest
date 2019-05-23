@@ -1,4 +1,5 @@
 const Location = require('./models/Location');
+const User = require('./models/User')
 
 function getArray() {
   return Location.findOne();
@@ -9,7 +10,6 @@ function createLocationArray(data) {
     markers: data.markers,
     createdAt: new Date()
   });
-
   return locationArray.save();
 };
 

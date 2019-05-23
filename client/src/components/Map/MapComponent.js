@@ -47,19 +47,19 @@ class MapComponent extends Component {
               <Popup>Current Location</Popup>
             </Marker>
           )}
-          {Array.prototype.map.call(geoJSON.features, (obj, idx) => (
-            this.props.sideBarItemChecked &&
-            obj.type === this.props.sideBarValue &&
-            this.getDistance(position, [obj.geometry.coordinates[0], obj.geometry.coordinates[1]]) < 3000 &&
-            < Marker
-              icon={organizationIcon}
-              draggable={false}
-              key={`marker-${idx}`}
-              position={[obj.geometry.coordinates[1], obj.geometry.coordinates[0]]}
-            >
-              <Popup>{obj.type}</Popup>
-            </Marker>
-          ))
+          {this.props.sideBarItemChecked && geoJSON.features
+            .filter(obj =>
+              this.getDistance(position, [obj.geometry.coordinates[0], obj.geometry.coordinates[1]]) < 1000 &&
+              obj.type === this.props.sideBarValue)
+            .map((obj, idx) =>
+              <Marker
+                icon={organizationIcon}
+                draggable={false}
+                key={`marker-${idx}`}
+                position={[obj.geometry.coordinates[1], obj.geometry.coordinates[0]]}
+              >
+                <Popup>{obj.type}</Popup>
+              </Marker>)
           }
           {this.props.markers.map((position, idx) => (
             <Marker

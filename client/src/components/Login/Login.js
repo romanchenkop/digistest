@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import axios from "axios"
 
 class Login extends Component {
-  onEmailChange = (event) => {
-
+  onEmailChange = (event) =>
     this.props.setEmailText(event.target.value);
-  };
 
-  handleSubmitClick = () => {
+  handleSubmitClick = (e) => {
+    e.preventDefault();
     const userData = {
       "login": this.props.email,
       "password": this.props.password,
@@ -16,10 +15,12 @@ class Login extends Component {
       method: 'post',
       url: 'http://localhost:5000/api/user/login',
       data: {
-        'login': userData.login,
-        'password': userData.password,
+        login: userData.login,
+        password: userData.password,
       }
-    }).catch(error => console.log(error));
+    })
+      .then(response => alert(response.data))
+      .catch(() => alert("You gave wrong credentials"))
   };
 
   onPasswordChange = (event) => {
@@ -66,7 +67,7 @@ class Login extends Component {
         </form>
       </div>
     );
-  };
-};
+  }
+}
 
 export default Login;
