@@ -2,7 +2,7 @@ const Location = require('./models/Location');
 
 function getArray() {
   return Location.findOne();
-}
+};
 
 function createLocationArray(data) {
   const locationArray = new Location({
@@ -11,7 +11,7 @@ function createLocationArray(data) {
   });
 
   return locationArray.save();
-}
+};
 
 module.exports.createLocationArray = createLocationArray;
 module.exports.getArray = getArray;

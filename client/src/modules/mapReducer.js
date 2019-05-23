@@ -20,39 +20,35 @@ const defaultState = {
 
 const mapReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case GET_VALUE_FROM_SIDE_BAR: {
+    case GET_VALUE_FROM_SIDE_BAR:
       return {
         ...state,
         sideBarValue: action.payload.value,
         sideBarItemChecked: action.payload.checked,
       };
-    };
-    case GET_USER_LOCATION: {
+    case GET_USER_LOCATION:
       return {
         ...state,
         location: action.payload,
         allowsUserLocation: true,
         zoom: 13,
       };
-    };
-    case ADD_MARKER: {
+    case ADD_MARKER:
       return {
         ...state,
         markers: [...state.markers, action.payload],
         saveBtnAble: true,
       };
-    };
     case SHOW_MARKERS:
       return {
         ...state,
         markersOpacity: action.payload,
       };
-    case SAVE_MARKERS: {
+    case SAVE_MARKERS:
       return {
         ...state,
         markersOpacity: action.payload,
       };
-    };
     default:
       return state;
   };

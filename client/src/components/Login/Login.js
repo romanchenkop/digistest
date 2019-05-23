@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios"
 
-class LogIn extends Component {
+class Login extends Component {
   onEmailChange = (event) => {
 
     this.props.setEmailText(event.target.value);
@@ -69,4 +69,4 @@ class LogIn extends Component {
   };
 };
 
-export default LogIn;
+export default Login;

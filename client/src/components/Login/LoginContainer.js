@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LogIn from './LogIn';
+import Login from './Login';
 import { connect } from 'react-redux';
 import { setEmailText, setPasswordText, handleFormSubmit } from '../../modules/authReducer';
 
@@ -7,7 +7,7 @@ export class LogInContainer extends Component {
   render() {
     return (
       <div>
-        <LogIn
+        <Login
           handleFormSubmit={this.props.handleFormSubmit}
           setEmailText={this.props.setEmailText}
           setPasswordText={this.props.setPasswordText}
