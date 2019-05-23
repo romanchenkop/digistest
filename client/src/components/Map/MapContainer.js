@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MapComponent from './MapComponent';
 import { connect } from 'react-redux';
-import { getUserLocation, addMarker } from '../../modules/map/reducer';
+import { getUserLocation, addMarker } from '../../modules/mapReducer';
 
 export class MapContainer extends Component {
   componentDidMount() {
@@ -18,6 +18,8 @@ export class MapContainer extends Component {
     return (
       <div>
         <MapComponent
+          sideBarItemChecked={this.props.sideBarItemChecked}
+          sideBarValue={this.props.sideBarValue}
           addMarker={this.props.addMarker}
           markers={this.props.markers}
           markersOpacity={this.props.markersOpacity}
@@ -32,6 +34,8 @@ export class MapContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    sideBarItemChecked: state.map.sideBarItemChecked,
+    sideBarValue: state.map.sideBarValue,
     markers: state.map.markers,
     markersOpacity: state.map.markersOpacity,
     location: state.map.location,

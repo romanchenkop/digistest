@@ -9,8 +9,8 @@ router.post("/login", async (req, res) => {
   const login = await User.findOne({ login: req.body.login });
   if (!login) return res.status(400).send('Login does not exist');
 
-  const validPass = await User.findOne({ password: req.body.password });
-  if (!validPass) return res.status(400).send('invalid password');
+  const validPassword = await User.findOne({ password: req.body.password });
+  if (!validPassword) return res.status(400).send('invalid password');
 
   res.send('Logged in');
 });

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from "axios"
 
 class LogIn extends Component {
   onEmailChange = (event) => {
@@ -11,9 +12,15 @@ class LogIn extends Component {
       "login": this.props.email,
       "password": this.props.password,
     }
-    console.log(userData)
-    this.props.handleFormSubmit(userData)
-  }
+    axios({
+      method: 'post',
+      url: 'http://localhost:5000/api/user/login',
+      data: {
+        'login': userData.login,
+        'password': userData.password,
+      }
+    }).catch(error => console.log(error))
+  };
 
   onPasswordChange = (event) => {
     this.props.setPasswordText(event.target.value);
@@ -21,7 +28,7 @@ class LogIn extends Component {
 
   render() {
     return (
-      <div className="row">
+      <div className="row" >
         <form className="col s6">
           <div className="row">
             <div className="input-field col s12">

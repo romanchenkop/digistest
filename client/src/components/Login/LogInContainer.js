@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LogIn from './LogIn';
 import { connect } from 'react-redux';
-import { setEmailText, setPasswordText, handleFormSubmit } from '../../modules/auth/reducer';
+import { setEmailText, setPasswordText, handleFormSubmit } from '../../modules/authReducer';
 
 export class LogInContainer extends Component {
   render() {
