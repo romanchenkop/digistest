@@ -9,7 +9,7 @@ Runs client and server concurrently
 ### `npm run client-install` 
 Get all cline modules to initiate start
 ### `npm run client`
-Starts frontend on 'http://localhos:3000'
+Starts frontend on 'http://localhost:3000'
 ### `npm run server`
 Start server with hot-reload via nodemon. 
 
